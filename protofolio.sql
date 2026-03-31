@@ -1,11 +1,6 @@
--- ============================================
--- DATABASE SETUP: Portfolio Hendri Zaidan
--- ============================================
-
 CREATE DATABASE IF NOT EXISTS portfolio_db;
 USE portfolio_db;
 
--- ---- Tabel profile ----
 CREATE TABLE IF NOT EXISTS profile (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -13,20 +8,17 @@ CREATE TABLE IF NOT EXISTS profile (
     description TEXT NOT NULL
 );
 
--- ---- Tabel skills ----
 CREATE TABLE IF NOT EXISTS skills (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     level INT NOT NULL CHECK (level BETWEEN 0 AND 100)
 );
 
--- ---- Tabel experiences ----
 CREATE TABLE IF NOT EXISTS experiences (
     id INT PRIMARY KEY AUTO_INCREMENT,
     description VARCHAR(255) NOT NULL
 );
 
--- ---- Tabel certificates ----
 CREATE TABLE IF NOT EXISTS certificates (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(150) NOT NULL,
@@ -34,10 +26,6 @@ CREATE TABLE IF NOT EXISTS certificates (
     year YEAR NOT NULL,
     image VARCHAR(255) NOT NULL
 );
-
--- ============================================
--- DATA / SEEDING
--- ============================================
 
 INSERT INTO profile (name, role, description) VALUES (
     'Hendri Zaidan Safitra',
